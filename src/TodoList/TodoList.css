@@ -1,9 +1,20 @@
 .TodoList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 60%;
     padding-bottom: 50px;
 }
 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
+    width: 100%;
+}
+li{
+    width: 100%;
 }

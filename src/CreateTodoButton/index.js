@@ -1,18 +1,16 @@
 import React from 'react';
 import './CreateTodoButton.css';
-
-function CreateTodoButton(){
+import { BsFillPlusCircleFill } from 'react-icons/bs'
+function CreateTodoButton(props){
 
     const onClickButton = () => {
-        alert('Quieres agregar un nuevo TODO');
+        props.setOpenModal(prevState => !prevState);
     }
     return(
-        <button 
+        <BsFillPlusCircleFill 
         className='CreateTodoButton'
         onClick={onClickButton}
-        >
-            +
-        </button>
+        />
 
     );
 };
