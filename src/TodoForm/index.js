@@ -1,13 +1,13 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
+
 import './TodoForm.css';
 
-function TodoForm () {
+function TodoForm ({ addTodo, setOpenModal }) {
     const [newTodoValue, setNewTodoValue] = React.useState([]);
-    const { addTodo, setOpenModal} = React.useContext(TodoContext);
+
 
     const onWritting = (event) => {
-       setNewTodoValue(event.target.value);
+        setNewTodoValue(event.target.value);
     };
     const onCancel = () => {
         setOpenModal(false);
@@ -21,11 +21,11 @@ function TodoForm () {
     };
     const onKeyUp = (e) => {
         if (e.charCode === 13) {
-          e.preventDefault();
-          addTodo(newTodoValue);
-          onCancel();
+            e.preventDefault();
+            addTodo(newTodoValue);
+            onCancel();
         }
-      };
+    };
 
     return(
         <form onSubmit={onSubmit} onKeyPress={onKeyUp}>
